@@ -12,6 +12,9 @@ export default function InputField({
     secureTextEntry = false,
     keyboardType = 'default',
     autoCapitaliza = 'sentences',
+    multiline = false,
+    numberOfLines,
+    maxLength,
 }){
     //Props recebidas:
     // - label: texto acima do campo
@@ -33,7 +36,10 @@ export default function InputField({
                 secureTextEntry={secureTextEntry}
                 autoCapitalize={autoCapitaliza}
                 keyboardType={keyboardType}
-                style={styles.input}
+                multiline={multiline}
+                numberOfLines={numberOfLines}
+                maxLength={maxLength}
+                style={[styles.input, multiline && styles.multilineInput]}
             />
         </View>
     )
@@ -58,6 +64,11 @@ const styles = StyleSheet.create({
         color: colors.text,
         fontSize:16,
         paddingHorizontal: 16,
+    },
+    multilineInput: {
+        minHeight: 110,
+        paddingVertical: 14,
+        textAlignVertical: 'top',
     },
 
 });

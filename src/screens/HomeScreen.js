@@ -12,8 +12,8 @@ export default function HomeScreen({ navigation }) {
                     Organize seus estudos. Cadastre suas tarefas para começar.
                 </Text>
                 <PrimaryButton
-                    title="Cadastrar Tarefa"
-                    onPress={() => navigation.navigate("TaskForm")}
+                    title="Gerenciar Tarefas"
+                    onPress={() => navigation.navigate("TaskList")}
                 />
             </ScrollView>
         </SafeAreaView>
