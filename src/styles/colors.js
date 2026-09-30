@@ -1,24 +1,27 @@
-//Centraliza as cores do aplicativo
+// Centraliza as cores do aplicativo.
+const success = '#00B894';
+const error = '#C62828';
 
-// Exemplo de uso:
-// backgroundColor: Colors.primary
-export const  colors = {
-    // Cores principais  da identidade visual
-    primary: '#3157d5',
+export const colors = {
+    primary: '#6C5CE7',
     primaryDark: '#203c9e',
-    secondary: '#f4b942',
+    secondary: '#00CEC9',
+    success,
+    warning: '#FDCB6E',
+    danger: '#FF7675',
 
-    // Cores usadas para fundo e cartões 
-    background: '#f5f7fb',
-    surface: '#ffff',
+    background: '#F8F9FA',
+    surface: '#FFFFFF',
+    cardCompletedBg: '#E8F8F5',
+    cardPendingBg: '#FEF9E7',
+    cardTotalBg: '#F4ECF7',
 
-    //Cores usadas em textos e bordas
-    text:'#1f2937',
-    textLight: '#6b7280',
+    text: '#2D3436',
+    textLight: '#636E72',
     border: '#d9dfea',
 
-    // Cores usadas nas mensagens de feedback
-    erro: '#c62828',
-    sucess: '#2e7d32',
-
+    // Mantém os nomes antigos e uma cor legível para mensagens de erro.
+    error,
+    erro: error,
+    sucess: success,
 };

@@ -226,4 +226,25 @@ export class Task {
       throw new Error('Erro ao consultar tarefas de prioridade alta pendentes.');
     }
   }
+
+  // Métricas gerais do Dashboard, independentes dos filtros da listagem.
+  static getDashboardStatsLocal() {
+    try {
+      const { total, completed, pending } = getDatabase().getFirstSync(
+        `SELECT COUNT(*) AS total,
+                COALESCE(SUM(CASE WHEN completed = 1 THEN 1 ELSE 0 END), 0) AS completed,
+                COALESCE(SUM(CASE WHEN completed = 0 THEN 1 ELSE 0 END), 0) AS pending
+         FROM tasks`
+      );
+
+      return {
+        total,
+        completed,
+        pending,
+        percentage: total > 0 ? Math.round((completed / total) * 100) : 0,
+      };
+    } catch (error) {
+      throw new Error('Erro ao consultar as estatísticas das tarefas.');
+    }
+  }
 }

@@ -173,7 +173,7 @@ export default function TaskListScreen({ navigation }) {
 
       <TouchableOpacity
         style={styles.backButton}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.popTo('Home')}
       >
         <Text style={styles.backText}>Voltar para a Home</Text>
       </TouchableOpacity>
