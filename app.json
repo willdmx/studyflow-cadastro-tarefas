@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "StudyFlow",
-    "slug": "StudyFlow",
+    "slug": "studyflow-willdmx",
+    "owner": "willdmx",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,6 +11,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.willdmx.studyflow",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -22,6 +24,11 @@
     },
     "plugins": [
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cfaf32f6-05b0-4ced-8104-173e018c3c5a"
+      }
+    }
   }
 }
